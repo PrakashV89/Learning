@@ -25,7 +25,7 @@ public class ThreadCoordination {
     }
 
     private static void testThreadInterruptWithSpecificCheck() {
-        Thread longComputingThread = new LongComputingThread(BigInteger.TWO, BigInteger.valueOf(100000000));
+        Thread longComputingThread = new LongComputingThread(BigInteger.valueOf(2), BigInteger.valueOf(100000000));
 
         /*
          * Daemon Thread - TRUE - Background Activity - Not so critcal processing to the

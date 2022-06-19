@@ -4,23 +4,13 @@ public class DataRace {
     public static void main(String[] args) {
         SharedResource sharedResource = new SharedResource();
         Thread thread1 = new Thread(() -> {
-            while (true) {
-                /*
-                 * try { //Thread.sleep(1); } catch (InterruptedException ie) {
-                 * 
-                 * }
-                 */
+            for (int i = 0; i < Integer.MAX_VALUE; i++) {
                 sharedResource.increment();
             }
         });
 
         Thread thread2 = new Thread(() -> {
-            while (true) {
-                /*
-                 * try { //Thread.sleep(1); } catch (InterruptedException ie) {
-                 * 
-                 * }
-                 */
+            for (int i = 0; i < Integer.MAX_VALUE; i++) {
                 sharedResource.checkDataRace();
             }
         });
@@ -30,8 +20,8 @@ public class DataRace {
     }
 
     private static class SharedResource {
-        private int a = 0;
-        private int b = 0;
+        private volatile int a = 0;
+        private volatile int b = 0;
 
         public void increment() {
             a++;
@@ -39,7 +29,7 @@ public class DataRace {
         }
 
         public void checkDataRace() {
-            if (a < b) {
+            if (b > a) {
                 System.out.println("Data Race Happened!");
             }
         }

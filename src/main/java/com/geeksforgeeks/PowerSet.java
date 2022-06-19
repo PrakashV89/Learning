@@ -63,7 +63,7 @@ public class PowerSet {
         }
 
         ArrayList list1 = new ArrayList<>();
-        for (var element : list) {
+        for (String element : list) {
             list1.add(element + s.charAt(i));
         }
         list1.addAll(list);

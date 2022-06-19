@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hotspot_log version='160 1' process='31976' time_ms='1630422347472'>
+<vm_version>
+<name>
+Java HotSpot(TM) 64-Bit Server VM
+</name>
+<release>
+25.301-b09
+</release>
+<info>
+Java HotSpot(TM) 64-Bit Server VM (25.301-b09) for windows-amd64 JRE (1.8.0_301-b09), built on Jun  9 2021 06:46:21 by &quot;java_re&quot; with MS VC++ 15.9 (VS2017)
+</info>
+</vm_version>
+<vm_arguments>
+<args>
+-XX:+UnlockDiagnosticVMOptions -XX:+TieredCompilation -XX:+LogCompilation -XX:+PrintAssembly -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Educational Edition 2020.1.2\lib\idea_rt.jar=65367:C:\Program Files\JetBrains\IntelliJ IDEA Educational Edition 2020.1.2\bin -Dfile.encoding=UTF-8 
+</args>
+<command>
+com.udemyforbusiness.threads.algorithms.CyclicBarrierSample
+</command>
+<launcher>
+SUN_STANDARD
+</launcher>
+<properties>
+java.vm.specification.name=Java Virtual Machine Specification
+java.vm.version=25.301-b09
+java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+java.vm.info=mixed mode, sharing
+java.ext.dirs=C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext
+java.endorsed.dirs=C:\Program Files\Java\jdk1.8.0_301\jre\lib\endorsed
+sun.boot.library.path=C:\Program Files\Java\jdk1.8.0_301\jre\bin
+java.library.path=C:\Program Files\Java\jdk1.8.0_301\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk-13.0.2\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Go\bin;C:\Program Files (x86)\Calibre2\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\AMD\AMDuProf\bin;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Users\praka\anaconda3;C:\Users\praka\anaconda3\Library\mingw-w64\bin;C:\Users\praka\anaconda3\Library\usr\bin;C:\Users\praka\anaconda3\Library\bin;C:\Users\praka\anaconda3\Scripts;C:\Users\praka\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.3.3\bin;C:\Users\praka\AppData\Local\atom\bin;%IntelliJ IDEA Educational Edition%;%IntelliJ IDEA Community Edition%;C:\Users\praka\go\bin;C:\Users\praka\AppData\Local\Microsoft\WindowsApps;C:\Users\praka\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\praka\Documents\apache-maven-3.8.1-bin\apache-maven-3.8.1\bin;c:\Program Files\Java\jdk-11.0.11\\bin;C:\mingw-w64\i686-8.1.0-posix-dwarf-rt_v6-rev0\mingw32\bin;C:\Users\praka\.dotnet\tools;C:\Users\praka\AppData\Local\GitHubDesktop\bin;C:\Users\praka\AppData\Roaming\npm;.
+java.home=C:\Program Files\Java\jdk1.8.0_301\jre
+java.class.path=C:\Program Files\Java\jdk1.8.0_301\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\plugin.jar;C:\Program Files\J

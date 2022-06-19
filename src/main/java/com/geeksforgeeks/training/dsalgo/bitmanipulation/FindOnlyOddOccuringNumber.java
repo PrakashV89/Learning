@@ -21,7 +21,7 @@ public class FindOnlyOddOccuringNumber {
     //Supports till 30
     private static long getNaive(int[] is) {
         long num = 0;
-        for (var i = 0; i < is.length; i++) {
+        for (int i = 0; i < is.length; i++) {
             num ^= 1 << is[i];
         }
         

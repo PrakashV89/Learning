@@ -12,7 +12,7 @@ public class MaximumSumOfSubArray {
     }
 
     private static int getOptimized(int[] arr) {
-        var maxSum = 0;
+        int maxSum = 0;
         for (int i = 0; i < arr.length; i++) {
             maxSum = Math.max(maxSum, getOptimized(arr, i + 1, arr[i]));
         }
@@ -21,7 +21,7 @@ public class MaximumSumOfSubArray {
     }
 
     private static int getOptimized(int[] arr, int start, int sum) {
-        var maxSum = 0;
+        int maxSum = 0;
 
         if (start == arr.length) {
             return sum;
@@ -34,7 +34,7 @@ public class MaximumSumOfSubArray {
     }
 
     private static int get(int[] arr) {
-        var maxSum = 0;
+        int maxSum = 0;
         for (int i = 0; i < arr.length; i++) {
             maxSum = Math.max(maxSum, get(arr, i + 1, Arrays.asList(arr[i])));
         }
@@ -43,7 +43,7 @@ public class MaximumSumOfSubArray {
     }
 
     private static int get(int[] arr, int start, List<Integer> list) {
-        var maxSum = 0;
+        int maxSum = 0;
 
         if (start == arr.length) {
             System.out.println(list + ":" + getSumForList(list));

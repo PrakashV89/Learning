@@ -76,6 +76,6 @@ public class MajorityElement {
         Optional<Map.Entry<Integer, Long>> val = Arrays.stream(arr).boxed()
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream()
                 .max((e1, e2) -> e1.getValue().compareTo(e2.getValue())).filter(e -> e.getValue() > arr.length / 2);
-        return val.isPresent() ? val.stream().findFirst().get().getKey() : -1;
+        return val.isPresent() ? val.get().getKey() : -1;
     }
 }

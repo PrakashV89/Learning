@@ -54,7 +54,7 @@ public class ComplexCalculation {
     }
 
     public static void main(String[] args) {
-        System.out.println(new ComplexCalculation().calculateResult(BigInteger.TWO, BigInteger.TWO, BigInteger.TWO,
-                BigInteger.TWO));
+        System.out.println(new ComplexCalculation().calculateResult(BigInteger.valueOf(2), BigInteger.valueOf(2), BigInteger.valueOf(2),
+                BigInteger.valueOf(2)));
     }
 }
