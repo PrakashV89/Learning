@@ -7,24 +7,28 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class RestoreIPAddresses {
-    public static void main(String[] args) {
-        Instant now = Instant.now();
-        Solution solution = new Solution();
-        String[] inputs = {"25525511135",
-                "0000",
-                "101023"};
-        for(String input: inputs) {
-            System.out.println(solution.restoreIpAddresses(input));
-        }
-        System.out.println(Duration.between(now, Instant.now()).toMillis() + " ms");
+    public static void main(String[] args) throws InterruptedException {
 
-        now = Instant.now();
-        Solution1 solution1 = new Solution1();
-        for(String input: inputs) {
+        String[] inputs = {"25525511135", "0000", "101023"};
+
+//        Thread.sleep(10000);
+
+        Instant now = Instant.now();
+        BacktrackSolution solution1 = new BacktrackSolution();
+        for (String input : inputs) {
             System.out.println(solution1.restoreIpAddresses(input));
         }
 
         System.out.println(Duration.between(now, Instant.now()).toMillis() + " ms");
+
+//        Thread.sleep(10000);
+//        now = Instant.now();
+//        Solution solution = new Solution();
+//        for (String input : inputs) {
+//            System.out.println(solution.restoreIpAddresses(input));
+//        }
+//        System.out.println(Duration.between(now, Instant.now()).toMillis() + " ms");
+
     }
 
 }
@@ -43,8 +47,7 @@ class Solution {
     only if the segment is equal to '0'
     */
         int m = segment.length();
-        if (m > 3)
-            return false;
+        if (m > 3) return false;
         return (segment.charAt(0) != '0') ? (Integer.valueOf(segment) <= 255) : (m == 1);
     }
 
@@ -78,8 +81,7 @@ class Solution {
                 segments.add(segment);  // place dot
                 if (dots - 1 == 0)      // if all 3 dots are placed
                     update_output(curr_pos);  // add the solution to output
-                else
-                    backtrack(curr_pos, dots - 1);  // continue to place dots
+                else backtrack(curr_pos, dots - 1);  // continue to place dots
                 segments.removeLast();  // remove the last placed dot
             }
         }
@@ -117,24 +119,78 @@ class Solution1 {
         return ipAddresses;
     }
 
-    public void generate(int start, int bucketNum, String ipAddress, String bucket, int length, int bucketLength, int bucketVal){
-        if(start >= strLength){
-            if(bucketNum == MAX_BUCKET && !bucket.isEmpty() && length == strLength){
+    public void generate(int start, int bucketNum, String ipAddress, String bucket, int length, int bucketLength, int bucketVal) {
+        if (start >= strLength) {
+            if (bucketNum == MAX_BUCKET && !bucket.isEmpty() && length == strLength) {
                 ipAddresses.add(ipAddress);
             }
             return;
         }
 
         char char_ = s.charAt(start);
-        String nextStr = bucket +  char_;
-        int nextBucketVal = bucketVal*MULTIPLIER + char_ - ZERO;
+        String nextStr = bucket + char_;
+        int nextBucketVal = bucketVal * MULTIPLIER + char_ - ZERO;
         String nextIpAddress = ipAddress + char_;
 
-        if(!(bucketNum > MAX_BUCKET || (nextStr.length() > 1 && nextStr.startsWith(ZERO_STR)) || nextBucketVal > UPPER_BOUND_INCL)){
-            generate(start + 1, bucketNum, nextIpAddress, nextStr, length+1, bucketLength + 1, nextBucketVal);
+        if (!(bucketNum > MAX_BUCKET || (nextStr.length() > 1 && nextStr.startsWith(ZERO_STR)) || nextBucketVal > UPPER_BOUND_INCL)) {
+            generate(start + 1, bucketNum, nextIpAddress, nextStr, length + 1, bucketLength + 1, nextBucketVal);
         }
-        if(bucketNum < MAX_BUCKET && nextBucketVal <= UPPER_BOUND_INCL && (nextStr.length() <= 1  || !nextStr.startsWith(ZERO_STR))){
-            generate(start + 1, bucketNum + 1, nextIpAddress + DOT, "", length+1, 0, 0);
+        if (bucketNum < MAX_BUCKET && nextBucketVal <= UPPER_BOUND_INCL && (nextStr.length() <= 1 || !nextStr.startsWith(ZERO_STR))) {
+            generate(start + 1, bucketNum + 1, nextIpAddress + DOT, "", length + 1, 0, 0);
         }
+    }
+
+}
+
+class BacktrackSolution {
+    private LinkedList<String> segments = new LinkedList<>();
+    private List<String> ipAddresses = new ArrayList<>();
+    private String s;
+    private int sLength;
+
+    public List<String> restoreIpAddresses(String s) {
+        this.s = s;
+        this.sLength = s.length();
+
+        backtrack(-1, 3);
+        return ipAddresses;
+    }
+
+    private void backtrack(int start, int dots) {
+        if (start >= sLength) {
+            return;
+        }
+        int max_pos = Math.min(sLength - 1, start + 4);
+        for (int currPos = start + 1; currPos < max_pos; currPos++) {
+            String segment = s.substring(start + 1, currPos + 1);
+            if (isValid(segment)) {
+                segments.add(segment);
+
+                if (dots - 1 == 0) {
+                    addIpAddressConditionally(currPos);
+                } else {
+                    backtrack(currPos, dots - 1);
+                }
+
+                segments.removeLast();
+            }
+        }
+    }
+
+    private void addIpAddressConditionally(int currPos) {
+        String segment = s.substring(currPos + 1, sLength);
+
+        if (isValid(segment)) {
+            segments.add(segment);
+            ipAddresses.add(String.join(".", segments));
+            segments.removeLast();
+        }
+    }
+
+    private boolean isValid(String segment) {
+        int segmentLength = segment.length();
+        int segmentVal = Integer.parseInt(segment);
+
+        return (!segment.startsWith("0") || segmentLength == 1) && segmentVal >= 0 && segmentVal <= 255;
     }
 }
