@@ -1,4 +1,4 @@
-package com.geeksforgeeks.technique.hashing;
+package com.geeksforgeeks.technique.hashing.addressing.closed;
 
 import java.util.LinkedList;
 import java.util.stream.IntStream;
