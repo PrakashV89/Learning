@@ -13,15 +13,16 @@ public class Hoare {
         int low = 0;
         int high = arr.length;
         int i = low-1, j = high;
+        int pivot = arr[p];
 
         while(true){
             do{
                 i++;
-            }while(arr[i] < arr[p]);
+            }while(arr[i] < pivot);
 
             do{
                 j--;
-            }while(arr[j] > arr[p]);
+            }while(arr[j] > pivot);
 
             if(i >= j) return  j;
 
