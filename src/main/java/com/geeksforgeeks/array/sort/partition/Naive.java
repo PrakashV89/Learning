@@ -1,4 +1,4 @@
-package com.geeksforgeeks.array.partition;
+package com.geeksforgeeks.array.sort.partition;
 
 public class Naive {
     public static void main(String[] args) {
