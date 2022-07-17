@@ -1,4 +1,4 @@
-package com.geeksforgeeks.array.sort.partition;
+package com.geeksforgeeks.array.sort.comparison.partition;
 
 public class Lomuto {
     public static void main(String[] args) {

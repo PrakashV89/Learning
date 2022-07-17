@@ -1,4 +1,4 @@
-package com.java.collection;
+package com.java.collection.enumeration;
 
 import java.util.Arrays;
 import java.util.Enumeration;

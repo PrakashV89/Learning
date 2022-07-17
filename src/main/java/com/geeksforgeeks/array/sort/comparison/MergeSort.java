@@ -1,4 +1,4 @@
-package com.geeksforgeeks.array.sort;
+package com.geeksforgeeks.array.sort.comparison;
 
 import java.util.Arrays;
 
